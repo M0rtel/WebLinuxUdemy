@@ -1,23 +1,22 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Sidebars · Bootstrap v5.1</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
 
 
         <!-- Bootstrap core CSS -->
     <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static 'aboutMy/css/aboutMy.css' %}">
         <!-- Favicons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'aboutMy/css/aboutMy.css' %}">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
     <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -31,9 +30,11 @@
     <!-- Custom styles for this template -->
     <link href="sidebars.css" rel="stylesheet">
   </head>
-  <body>
+  <body style="background-color: #2c2c2c">
 
 <main>
+
+
   <h1 class="visually-hidden">Sidebars examples</h1>
 
   <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100%">
@@ -43,38 +44,16 @@
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="{% url 'home' %}" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><i class="bi bi-house"></i></svg>
-          Главная
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><i class="bi bi-file-person"></i></svg>
-          Обо мне
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'my_projects' %}" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="20"><i class="bi bi-kanban"></i></svg>
-          Проекты
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><i class="bi bi-telephone"></i></svg>
-          Контакты
-        </a>
-      </li>
-
+        {% block active1 %}{% endblock %}
     </ul>
     <hr>
   </div>
 
+  {% block content %}{% endblock %}
 
   <div class="b-example-divider"></div>
 </main>
+
 
 
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -1,0 +1,32 @@
+{% extends 'myProjects/layout2.html' %}
+{% block title %}Мой блог{% endblock %}
+
+
+{% block active %}
+<a class="nav-link" href="{% url 'home' %}">Главная</a>
+<a class="nav-link active" href="{% url 'blog' %}">Блог</a>
+<a class="nav-link" href="#">Обо мне</a>
+<a class="nav-link" href="{% url 'my_projects' %}">Проекты</a>
+<a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+{% endblock %}
+
+
+{% block database %}
+{% endblock %}
+
+
+{% block content %}
+  <div role="main" class="pl-3">
+    <div class="album py-5 bg-light">
+      <h1 class="ml-3 pb-5">Недавние посты</h1>
+      {% for el in posts %}
+        <h2>{{ el.title }}</h2>
+        <img src="{{ el.image.url }}" heigth="300" width="300" class="img-fluid">
+        <p>{{ el.text }}</p>
+        {{ el.date }}
+      <br/>
+      <br/>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

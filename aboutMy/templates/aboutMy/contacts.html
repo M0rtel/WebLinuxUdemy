@@ -1,11 +1,11 @@
 {% extends 'aboutMy/layout.html' %}
 
-{% block title %}Главная страница{% endblock %}
+{% block title %}Контакты{% endblock %}
 
 
 {% block active1 %}
 <li class="nav-item">
-        <a href="{% url 'home' %}" class="nav-link text-white active">
+        <a href="{% url 'home' %}" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><i class="bi bi-house"></i></svg>
           Главная
         </a>
@@ -29,7 +29,7 @@
         </a>
       </li>
       <li>
-        <a href="{% url 'contacts' %}" class="nav-link text-white">
+        <a href="{% url 'contacts' %}" class="nav-link text-white active">
           <svg class="bi me-2" width="16" height="16"><i class="bi bi-telephone"></i></svg>
           Контакты
         </a>
@@ -38,8 +38,8 @@
 
 
 {% block content %}
-    <div class="features color: ">
-        <h1>Главная страница</h1>
-        <p>Главная страница</p>
+    <div class="features">
+        <h1>Контакты</h1>
+        <p>Контакты</p>
     </div>
 {% endblock %}
