@@ -1,0 +1,29 @@
+{% extends 'myProjects/layout2.html' %}
+{% load static %}
+
+{% block title %}{{ posts.title }}{% endblock %}
+
+
+{% block active %}
+<a class="nav-link" href="{% url 'home' %}">Главная</a>
+<a class="nav-link active" href="{% url 'blog' %}">Блог</a>
+<a class="nav-link" href="{% static 'aboutMy/AboutMe.txt' %}" download="{% static 'aboutMy/AboutMe.txt' %}">Обо мне</a>
+<a class="nav-link" href="{% url 'my_projects' %}">Проекты</a>
+<a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+{% endblock %}
+
+
+{% block database %}
+{% endblock %}
+
+
+{% block content %}
+  <div role="main" class="pl-3">
+    <div class="album py-5 bg-light">
+      <h1 class="text-center">{{ blogs_str.title }}</h1>
+      <img src="{{ blogs_str.image.url }}" heigth="600" width="600" class="rounded mx-auto d-block">
+      <p style="font-size: 22px">{{ blogs_str.text }}</p>
+      <p class="text-end" style="font-size: 16px">Даты публикации: {{ blogs_str.date }}</p>
+    </div>
+  </div>
+{% endblock %}

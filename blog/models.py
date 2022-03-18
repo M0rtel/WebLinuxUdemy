@@ -6,3 +6,9 @@ class PostBlog(models.Model):
     date = models.DateTimeField()
     text = models.TextField()
     image = models.ImageField(upload_to='img/')
+
+    def continue_post(self):
+        return self.text[:100]
+
+    def __str__(self):
+        return self.title
